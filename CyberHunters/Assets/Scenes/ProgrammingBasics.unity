@@ -325,7 +325,7 @@ TextMesh:
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290953922
 --- !u!23 &987568976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -391,3 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 987568975}
   timerTextMesh: {fileID: 11554857}
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
+  finalColor: {r: 0, g: 0, b: 0, a: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
