@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/boomerang.unity
+- path: Assets/Scenes/boomerang.unity
   isLoaded: 1
   isActive: 1
