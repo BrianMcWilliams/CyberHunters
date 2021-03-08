@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/boomerang.unity
+- path: Assets/Scenes/Spectrum/Level 1 exploration.unity
   isLoaded: 1
   isActive: 1

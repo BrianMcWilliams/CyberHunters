@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Spectrum/Main menu.unity
+    guid: 04abd751f443a4f7f8f9b77cc69524bf
+  - enabled: 1
+    path: Assets/Scenes/Spectrum/Chapter menu.unity
+    guid: a22fdb235fbb743068ba1c3f808e0244
+  - enabled: 1
+    path: Assets/Scenes/Spectrum/Level 1 exploration.unity
+    guid: b015f9915beaf4ea8b0c2f1f29813977
+  - enabled: 1
+    path: Assets/Scenes/Spectrum/Data Center.unity
+    guid: 2a6d29d84a1ca44ca9b58086e127591a
   m_configObjects: {}
