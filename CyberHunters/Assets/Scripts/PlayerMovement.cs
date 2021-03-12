@@ -93,8 +93,8 @@ public class PlayerMovement : MonoBehaviour
 		isHeadBlocked = false;
 
 		//Cast rays for the left and right foot
-		RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, 0f), Vector2.down, groundDistance);
-		RaycastHit2D rightCheck = Raycast(new Vector2(footOffset, 0f), Vector2.down, groundDistance);
+		RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, -0.24f), Vector2.down, groundDistance);
+		RaycastHit2D rightCheck = Raycast(new Vector2(footOffset, -0.24f), Vector2.down, groundDistance);
 
 		//If either ray hit the ground, the player is on the ground
 		if (leftCheck || rightCheck)
