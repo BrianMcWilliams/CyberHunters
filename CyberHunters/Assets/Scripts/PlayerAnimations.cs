@@ -33,9 +33,9 @@ public class PlayerAnimations : MonoBehaviour
 		Transform parent = transform.parent;
 
 		//Get references to the needed components
-		movement	= parent.GetComponent<PlayerMovement>();
-		rigidBody	= parent.GetComponent<Rigidbody2D>();
-		input		= parent.GetComponent<PlayerInput>();
+		movement	= GetComponent<PlayerMovement>();
+		rigidBody	= GetComponent<Rigidbody2D>();
+		input		= GetComponent<PlayerInput>();
 		anim		= GetComponent<Animator>();
 		
 		//If any of the needed components don't exist...
