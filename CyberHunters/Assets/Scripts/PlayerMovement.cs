@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 	public float jumpHoldDuration = .1f;	//How long the jump key can be held
 
 	[Header("Environment Check Properties")]
-	public float footOffset = .4f;			//X Offset of feet raycast
+	public float footOffset = 0.2f;			//X Offset of feet raycast
 	public float eyeHeight = 1.5f;			//Height of wall checks
 	public float reachOffset = .7f;			//X offset for wall grabbing
 	public float headClearance = .5f;		//Space needed above the player's head
@@ -95,9 +95,10 @@ public class PlayerMovement : MonoBehaviour
 		//Cast rays for the left and right foot
 		RaycastHit2D leftCheck = Raycast(new Vector2(-footOffset, -0.24f), Vector2.down, groundDistance);
 		RaycastHit2D rightCheck = Raycast(new Vector2(footOffset, -0.24f), Vector2.down, groundDistance);
+		RaycastHit2D centerCheck = Raycast(new Vector2(0.0f, -0.24f), Vector2.down, groundDistance);
 
 		//If either ray hit the ground, the player is on the ground
-		if (leftCheck || rightCheck)
+		if (leftCheck || rightCheck || centerCheck)
 			isOnGround = true;
 
 		//Cast the ray to check above the player's head
