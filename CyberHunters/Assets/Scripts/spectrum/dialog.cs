@@ -6,7 +6,7 @@ using TMPro;
 public class dialog : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public string[] sentences;
+    public static string[] sentences = ["",""];
     private int index;
     public float typingSpeed;
     public GameObject continueButton;
@@ -21,7 +21,20 @@ public class dialog : MonoBehaviour
         if(textDisplay.text == sentences[index])
         {
             continueButton.SetActive(true);
-        }   
+        }
+
+
+
+        
+        if(textDisplay.text == sentences[3]) 
+        {
+            textDisplay.color = new Color(0.9f, 0.9f, 0.1f);  
+        }
+        
+        if(textDisplay.text == sentences[6]) 
+        {
+            textDisplay.color = new Color(0.9f, 0.9f, 0.1f);  
+        } 
     }
 
     IEnumerator Type()
@@ -30,7 +43,6 @@ public class dialog : MonoBehaviour
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
-
         }
     }
 
@@ -41,7 +53,8 @@ public class dialog : MonoBehaviour
         if(index < sentences.Length - 1)
         {
             index++;
-            textDisplay.text = "";
+            textDisplay.text = ""; 
+            textDisplay.color = new Color(0.4f, 1.0f, 1.0f); 
             StartCoroutine(Type());
         } 
         else
@@ -51,4 +64,7 @@ public class dialog : MonoBehaviour
 
         }
     }
+
+
+
 }
