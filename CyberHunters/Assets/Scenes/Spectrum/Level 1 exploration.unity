@@ -2197,9 +2197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 743949861}
-  sentences:
-  - "I wonder what I\u2019ll find today. Perhaps some batteries or magnets. I know
-    somebody needs some for their lights. "
+  indexStart: 0
+  indexEnd: 0
   typingSpeed: 0.03
   continueButton: {fileID: 482699537}
 --- !u!4 &525978503
@@ -3002,9 +3001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 743949861}
-  sentences:
-  - "What is this? I\u2019ve never seen this type of\u2026 rope\u2026 I should keep
-    it in case I need it later on. "
+  indexStart: 1
+  indexEnd: 1
   typingSpeed: 0.03
   continueButton: {fileID: 482699537}
 --- !u!4 &683702831
@@ -3671,8 +3669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 743949861}
-  sentences:
-  - Shiny crystals, they seem to lead somewhere, I should follow them.
+  indexStart: 2
+  indexEnd: 2
   typingSpeed: 0.02
   continueButton: {fileID: 482699537}
 --- !u!4 &895767459
@@ -6221,7 +6219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1987636558
 AudioSource:
   m_ObjectHideFlags: 0
