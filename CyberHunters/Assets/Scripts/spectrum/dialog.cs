@@ -26,10 +26,9 @@ public class dialog : MonoBehaviour
         "Based on my information, these machines needed to be constantly cooled off since they stored every data, such as numeric pictures or watching movies.",
         "In 2020, if The Internet was a country, it would’ve been the 5th largest consumer of electricity.",
         "And then in 2050, The Internet alone became the world’s main source of pollution and generated as much greenhouse gas in the atmosphere as fossil-fuels emissions.",
-        "In the year 2084, every data center overheated and stopped functioning leading to the fall of humanity, leaving billions of homes without technology.",
-        "In fact, every country and company was dependent on data centers.",
+        "In the year 2084, every data center overheated and stopped functioning leading to the fall of humanity and leaving billions of homes without technology.",
         "Here,  let me show you around, you’ll understand better.",
-        " It was crucial for these servers to be in perfect shape, or else, everything went down.",
+        "It was crucial for these servers to be in perfect shape, or else, everything went down.",
         "Like the heat coming from a cell phone as it is being used, data centers, containing the equivalent of thousands of servers, heated up proportionately and required a huge amount of cooling energy to keep them in condition, polluting the air around them.",
         "There wasn’t enough awareness about its effect and people continued to consume more and more.",
         "No one knew that the usage of the internet was harmful. People couldn’t realize the implications of their consumption.",
@@ -112,7 +111,7 @@ public class dialog : MonoBehaviour
     {
         continueButton.SetActive(false);
 
-        if(indexStart < indexEnd)
+        if(index < indexEnd)
         {
             index++;
             textDisplay.text = ""; 
