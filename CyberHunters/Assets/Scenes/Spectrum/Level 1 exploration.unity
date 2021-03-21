@@ -1212,6 +1212,7 @@ MonoBehaviour:
   button: {fileID: 1380836322}
   wire: {fileID: 214268785}
   dialog: {fileID: 683702829}
+  jumpButton: {fileID: 1638745427}
 --- !u!1 &264440545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,7 +3597,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 706916760}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1638745427}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 761868a96f1cb0b45b879f32826066e5, type: 3}
@@ -4981,6 +4982,7 @@ MonoBehaviour:
   button: {fileID: 1380836322}
   wire: {fileID: 214268785}
   dialog: {fileID: 683702829}
+  jumpButton: {fileID: 1638745427}
 --- !u!114 &1380836325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5777,6 +5779,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1638745427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1988635797225556, guid: d3333c14ca55e0949b56e4da9ac45c41,
+    type: 3}
+  m_PrefabInstance: {fileID: 706916760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1794202740
 GameObject:
   m_ObjectHideFlags: 0
