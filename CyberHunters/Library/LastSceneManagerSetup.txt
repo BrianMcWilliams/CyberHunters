@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Spectrum/Chapter menu.unity
+- path: Assets/Scenes/Spectrum/Data Center.unity
   isLoaded: 1
   isActive: 1
