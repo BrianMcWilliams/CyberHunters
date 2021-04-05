@@ -15,7 +15,7 @@ public class dialog : MonoBehaviour
         "I wonder what I’ll find today. Perhaps some batteries or magnets. I know somebody needs some for their lights.", //Index 0
         "What is this? I’ve never seen this type of… rope… I should keep it in case I need it later on.", //Index 1
         "Shiny crystals, they seem to lead somewhere, I should follow them.", //Index 2
-        "This door is locked, there are sockets and it appears that the wires I found on the way here fit perfectly... I'll open my bag.", //3
+        "Oh, that's what the wires were for, I'll click on the door to see what's inside.", //3
         "Hi, my name is Spec.t.r.u.m, it stands for Special, Tech, Robot, Universal, Maintenance.", //4
         "Hmm my last update was in 2184 and I’ve been shut downed since then. What year is it?",
         "It is 3084.",
