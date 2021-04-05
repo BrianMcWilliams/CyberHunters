@@ -108,49 +108,11 @@ public class PlayerMovement : MonoBehaviour
 		if (headCheck)
 			isHeadBlocked = true;
 
-		//Determine the direction of the wall grab attempt
-		Vector2 grabDir = new Vector2(direction, 0f);
 
-		//Cast three rays to look for a wall grab
-		RaycastHit2D blockedCheck = Raycast(new Vector2(footOffset * direction, playerHeight), grabDir, grabDistance);
-		RaycastHit2D ledgeCheck = Raycast(new Vector2(reachOffset * direction, playerHeight), Vector2.down, grabDistance);
-		RaycastHit2D wallCheck = Raycast(new Vector2(footOffset * direction, eyeHeight), grabDir, grabDistance);
-
-		//If the player is off the ground AND is not hanging AND is falling AND
-		//found a ledge AND found a wall AND the grab is NOT blocked...
-		if (!isOnGround && !isHanging && rigidBody.velocity.y < 0f && 
-			ledgeCheck && wallCheck && !blockedCheck)
-		{ 
-			//...we have a ledge grab. Record the current position...
-			Vector3 pos = transform.position;
-			//...move the distance to the wall (minus a small amount)...
-			pos.x += (wallCheck.distance - smallAmount) * direction;
-			//...move the player down to grab onto the ledge...
-			pos.y -= ledgeCheck.distance;
-			//...apply this position to the platform...
-			transform.position = pos;
-			//...set the rigidbody to static...
-			rigidBody.bodyType = RigidbodyType2D.Static;
-			//...finally, set isHanging to true
-			isHanging = true;
-		}
 	}
 
 	void GroundMovement()
 	{
-		//If currently hanging, the player can't move to exit
-		if (isHanging)
-			return;
-
-		//Handle crouching input. If holding the crouch button but not crouching, crouch
-		//if (input.crouchHeld && !isCrouching && !isJumping)
-			//Crouch();
-		//Otherwise, if not holding crouch but currently crouching, stand up
-		//else if (!input.crouchHeld && isCrouching)
-			//StandUp();
-		//Otherwise, if crouching and no longer on the ground, stand up
-		//else if (!isOnGround && isCrouching)
-			//StandUp();
 
 		//Calculate the desired velocity based on inputs
 		float xVelocity = speed * input.horizontal;
@@ -159,9 +121,6 @@ public class PlayerMovement : MonoBehaviour
 		if (xVelocity * direction < 0f)
 			FlipCharacterDirection();
 
-		//If the player is crouching, reduce the velocity
-		if (isCrouching)
-			xVelocity /= crouchSpeedDivisor;
 
 		//Apply the desired velocity 
 		rigidBody.velocity = new Vector2(xVelocity, rigidBody.velocity.y);
@@ -173,52 +132,19 @@ public class PlayerMovement : MonoBehaviour
 
 	void MidAirMovement()
 	{
-		//If the player is currently hanging...
-		if (isHanging)
-		{
-			//If crouch is pressed...
-			if (input.crouchPressed)
-			{
-				//...let go...
-				isHanging = false;
-				//...set the rigidbody to dynamic and exit
-				rigidBody.bodyType = RigidbodyType2D.Dynamic;
-				return;
-			}
-
-			//If jump is pressed...
-			if (input.jumpPressed)
-			{
-				//...let go...
-				isHanging = false;
-				//...set the rigidbody to dynamic and apply a jump force...
-				rigidBody.bodyType = RigidbodyType2D.Dynamic;
-				rigidBody.AddForce(new Vector2(0f, hangingJumpForce), ForceMode2D.Impulse);
-				//...and exit
-				return;
-			}
-		}
-
 		//If the jump key is pressed AND the player isn't already jumping AND EITHER
 		//the player is on the ground or within the coyote time window...
 		if (input.jumpPressed && !isJumping && (isOnGround || coyoteTime > Time.time))
 		{
-			//...check to see if crouching AND not blocked. If so...
-			if (isCrouching && !isHeadBlocked)
-			{
-				//...stand up and apply a crouching jump boost
-				StandUp();
-				rigidBody.AddForce(new Vector2(0f, crouchJumpBoost), ForceMode2D.Impulse);
-			}
-
 			//...The player is no longer on the groud and is jumping...
 			isOnGround = false;
 			isJumping = true;
 
 			//...record the time the player will stop being able to boost their jump...
-			jumpTime = Time.time + jumpHoldDuration;
+			jumpTime = Time.time + 0.5f;
 
 			//...add the jump force to the rigidbody...
+			rigidBody.velocity = new Vector2(0.0f, 0.0f);
 			rigidBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
 
 			//...and tell the Audio Manager to play the jump audio
@@ -227,10 +153,6 @@ public class PlayerMovement : MonoBehaviour
 		//Otherwise, if currently within the jump time window...
 		else if (isJumping)
 		{
-			//...and the jump button is held, apply an incremental force to the rigidbody...
-			if (input.jumpHeld)
-				rigidBody.AddForce(new Vector2(0f, jumpHoldForce), ForceMode2D.Impulse);
-
 			//...and if jump time is past, set isJumping to false
 			if (jumpTime <= Time.time)
 				isJumping = false;
@@ -255,16 +177,6 @@ public class PlayerMovement : MonoBehaviour
 		//Apply the new scale
 		transform.localScale = scale;
 	}
-
-	//void Crouch()
-	//{
-		//The player is crouching
-		//isCrouching = true;
-
-		//Apply the crouching collider size and offset
-		//bodyCollider.size = colliderCrouchSize;
-		//bodyCollider.offset = colliderCrouchOffset;
-	//}
 
 	void StandUp()
 	{

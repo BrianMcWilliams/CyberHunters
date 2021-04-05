@@ -6,9 +6,6 @@ public class doorPuzzle : MonoBehaviour {
 
     public GameObject doorGear;
 
-    public GameObject parent;
-
-
     public void Use() 
     {
         foreach (Transform child in transform)

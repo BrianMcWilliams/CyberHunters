@@ -22,14 +22,14 @@ public class dialog : MonoBehaviour
         "I am unable to connect to the current servers, they must be down. Do you know what happened?",
         "No... I don't even know what this place is...",
         "I’ll run a quick analysis…",
-        "Based on my information, this was a data center, it stored every data from the Internet, such as numeric pictures or videos",
-        "In 2019, data centers emitted as much CO2 as air travel in the United States.",
-        "And then in 2100, the Internet alone became the world’s main source of pollution and generated as much greenhouse gas in the atmosphere as fossil-fuel emissions.",
-        "In the year 2184, every data center overheated and stopped functioning leading to the fall of humanity.",
-        "Here, let me show you around, you’ll understand better.", //14
-        "It was crucial for these servers to be in perfect shape, or else everything went down.", //15
-        "Like the heat coming from a cell phone as it is being used, data centers, containing the equivalent of thousands of servers...", 
-        "Heated up proportionately and required a huge amount of cooling energy to keep them in condition, polluting the air around them.", //17
+        "Based on my information, this was a data center, it stored every data from the Internet, such as numeric pictures or videos.",
+        "In the year 2184, every data center overheated and stopped functioning, leading to the fall of humanity.",
+        "Here, let me show you around, you’ll understand better.", //12
+        "In 2019, data centers emitted as much CO2 in the atmosphere as airplanes in the United States.", //13
+        "And then in 2100, the Internet alone became the world’s main source of pollution.",
+        "It was crucial for these servers to be in perfect shape, or else everything went down.",
+        "Like the heat coming from a cell phone as it is being used, data centers, containing the equivalent of thousands of servers, heated up proportionately.", 
+        "They required a huge amount of cooling energy to keep them in condition, polluting the air around them.", //17
         "There wasn’t enough awareness about the effect of the Internet and people continued to consume more and more.", //18
         "No one knew that its usage was harmful. People couldn’t realize the implications of their consumption.",// 19
         "I'll show you the after-effect of the Internet, from cryptocurrency, streaming, social media to electronic waste and how it affected these data centers and consequently, the environment.", //20

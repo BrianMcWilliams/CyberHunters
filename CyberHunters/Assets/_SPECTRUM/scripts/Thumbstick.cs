@@ -31,8 +31,8 @@ public class Thumbstick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoi
 		center = transform.position;
 
 		RectTransform rect = GetComponent<RectTransform>();
-		minX = center.x - rect.rect.width / 2f;
-		maxX = center.x + rect.rect.width / 2f;
+		minX = center.x - rect.rect.width / 2.1f;
+		maxX = center.x + rect.rect.width / 2.1f;
 	    minY = center.y - rect.rect.height / 2f;
 		maxY = center.y + rect.rect.height / 2f;
 	}

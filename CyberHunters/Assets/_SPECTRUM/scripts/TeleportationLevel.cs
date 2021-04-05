@@ -9,13 +9,14 @@ public class TeleportationLevel : MonoBehaviour
     public Animator levelAnim;
     public Animator musicAnim;
     public float WaitTime;
+    
 
     public void Activate()
     {
         StartCoroutine(Wait());
         levelAnim.SetTrigger("FadeOut");
-      
     }
+      
 
     //public void OnFadeComplete ()
     //{
@@ -28,6 +29,8 @@ public class TeleportationLevel : MonoBehaviour
         musicAnim.SetTrigger("fadeOut");
         yield return new WaitForSeconds(WaitTime);
         SceneManager.LoadScene(indexLevel);
+        
+
     }
 
 

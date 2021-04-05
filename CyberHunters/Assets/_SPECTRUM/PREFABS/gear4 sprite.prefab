@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4302325298037941967}
   - component: {fileID: 3637556774110943706}
+  - component: {fileID: 114733631949322432}
   m_Layer: 0
   m_Name: gear4 sprite
   m_TagString: Untagged
@@ -79,3 +80,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &114733631949322432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8972002858771162373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17fd51b6d48434511b02ce158b03e6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorGear: {fileID: 0}

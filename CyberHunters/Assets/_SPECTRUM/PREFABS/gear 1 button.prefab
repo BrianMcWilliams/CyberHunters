@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6738346672019528326}
   - component: {fileID: 6350295022658644551}
   - component: {fileID: 4786912965160573403}
+  - component: {fileID: 114902392409623372}
   m_Layer: 0
   m_Name: gear 1 button
   m_TagString: Untagged
@@ -72,3 +73,17 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &114902392409623372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469034647873518923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17fd51b6d48434511b02ce158b03e6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorGear: {fileID: 7350469977868522046, guid: dae40289ed345446d94d29fb160cef34,
+    type: 3}
