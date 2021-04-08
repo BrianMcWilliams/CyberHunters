@@ -10,27 +10,17 @@ public class TeleportationLevel : MonoBehaviour
     public Animator musicAnim;
     public float WaitTime;
     
-
     public void Activate()
     {
         StartCoroutine(Wait());
         levelAnim.SetTrigger("FadeOut");
     }
-      
-
-    //public void OnFadeComplete ()
-    //{
-
-    //}
-
 
     IEnumerator Wait()
     {
         musicAnim.SetTrigger("fadeOut");
         yield return new WaitForSeconds(WaitTime);
         SceneManager.LoadScene(indexLevel);
-        
-
     }
 
 

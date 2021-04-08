@@ -78,10 +78,6 @@ public class dialog : MonoBehaviour
         }
 
 
-        // example 
-        // get the text: 
-        // sentences[index] 
-
         // check who's talking
         if(speaker[index] == Character.Player)
         {

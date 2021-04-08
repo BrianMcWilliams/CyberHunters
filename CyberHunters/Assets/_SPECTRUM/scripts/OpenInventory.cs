@@ -6,7 +6,6 @@ public class OpenInventory : MonoBehaviour
 {
     public GameObject openButton;
     public GameObject exitButton;
-
     public GameObject inventory;
 
     public void clickThisButton()
