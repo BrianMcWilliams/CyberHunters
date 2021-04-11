@@ -14,6 +14,7 @@ public class TeleportationLevel : MonoBehaviour
     {
         StartCoroutine(Wait());
         levelAnim.SetTrigger("FadeOut");
+        DialogManager.isTalking = false;
     }
 
     IEnumerator Wait()

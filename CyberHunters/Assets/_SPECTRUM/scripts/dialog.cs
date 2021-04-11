@@ -17,7 +17,7 @@ public class dialog : MonoBehaviour
         "Shiny crystals, they seem to lead somewhere, I should follow them.", //Index 2
         "Oh, that's what the wires were for, I'll open the door to see what's inside.", //3
         "Hi, my name is Spec.t.r.u.m, it stands for Special, Tech, Robot, Universal, Maintenance.", //4
-        "Hmm my last update was in 2184 and I’ve been shut downed since then. What year is it?",
+        "Hmm my last update was in 2184 and I’ve been shut down since then. What year is it?",
         "It is 3084.",
         "I am unable to connect to the current servers, they must be down. Do you know what happened?",
         "No... I don't even know what this place is...",
@@ -27,12 +27,11 @@ public class dialog : MonoBehaviour
         "Here, let me show you around, you’ll understand better.", //12
         "In 2019, data centers emitted as much CO2 in the atmosphere as airplanes in the United States.", //13
         "And then in 2100, the Internet alone became the world’s main source of pollution.",
-        "It was crucial for these servers to be in perfect shape, or else everything went down.",
         "Like the heat coming from a cell phone as it is being used, data centers, containing the equivalent of thousands of servers, heated up proportionately.", 
-        "They required a huge amount of cooling energy to keep them in condition, polluting the air around them.", //17
-        "There wasn’t enough awareness about the effect of the Internet and people continued to consume more and more.", //18
-        "No one knew that its usage was harmful. People couldn’t realize the implications of their consumption.",// 19
-        "I'll show you the after-effect of the Internet, from cryptocurrency, streaming, social media to electronic waste and how it affected these data centers and consequently, the environment.", //20
+        "They required a huge amount of cooling energy to keep them in condition, polluting the air around them.", //16
+        "There wasn’t enough awareness about the effect of the Internet and people continued to consume more and more.", //17
+        "No one knew that its usage was harmful. People couldn’t realize the implications of their consumption.",// 18
+        "I'll show you the after-effect of the Internet, from cryptocurrency, streaming, social media to electronic waste and how it affected these data centers and consequently, the environment.", //19
     };
     public static Character[] speaker =
     {
@@ -54,7 +53,6 @@ public class dialog : MonoBehaviour
         Character.Robot,
         Character.Robot,
         Character.Robot,
-        Character.Robot,
         Character.Robot,   
         Character.Robot,                                                                                                                                                                                          
     };
@@ -66,15 +64,29 @@ public class dialog : MonoBehaviour
 
     void Start()
     {
-        index = indexStart;
-        StartCoroutine(Type());
+        if(DialogManager.isTalking)
+        {
+            DialogManager.indexEnd = indexEnd; 
+            gameObject.SetActive(false);
+
+        }
+        else
+        {
+            DialogManager.indexEnd = indexEnd; 
+            DialogManager.isTalking = true;
+            index = indexStart;
+            StartCoroutine(Type());
+        }
+        
     }
 
     void Update() 
     {
         if(textDisplay.text == sentences[index])
         {
+
             continueButton.SetActive(true);
+            
         }
 
 
@@ -104,9 +116,11 @@ public class dialog : MonoBehaviour
 
     public void NextSentence()
     {
-        continueButton.SetActive(false);
 
-        if(index < indexEnd)
+        continueButton.SetActive(false);
+        
+
+        if(index < DialogManager.indexEnd)
         {
             index++;
             textDisplay.text = ""; 
@@ -114,8 +128,11 @@ public class dialog : MonoBehaviour
         } 
         else
         {
+            DialogManager.isTalking = false;
             textDisplay.text = "";
+
             continueButton.SetActive(false);
+            
         }
     }
 

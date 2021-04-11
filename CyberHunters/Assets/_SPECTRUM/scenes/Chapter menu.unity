@@ -918,7 +918,7 @@ MonoBehaviour:
   indexLevel: 2
   levelAnim: {fileID: 1756320414}
   musicAnim: {fileID: 873994211}
-  WaitTime: 3
+  WaitTime: 2.8
 --- !u!114 &1711388310
 MonoBehaviour:
   m_ObjectHideFlags: 0

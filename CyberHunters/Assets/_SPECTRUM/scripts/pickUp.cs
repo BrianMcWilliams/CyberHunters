@@ -20,7 +20,7 @@ public class pickUp : MonoBehaviour {
     void OnCollisionEnter2D (Collision2D other)
     {
         button.SetActive (true); 
-
+        
         if(dialog != null)
         {
             dialog.SetActive(true);
