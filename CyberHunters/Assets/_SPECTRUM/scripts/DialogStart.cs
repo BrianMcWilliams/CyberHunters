@@ -9,5 +9,6 @@ public class DialogStart : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         dialog.SetActive (true);
+        gameObject.SetActive(false);
     }
 }

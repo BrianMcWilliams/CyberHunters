@@ -84,9 +84,7 @@ public class dialog : MonoBehaviour
     {
         if(textDisplay.text == sentences[index])
         {
-
-            continueButton.SetActive(true);
-            
+            continueButton.SetActive(true);     
         }
 
 
